@@ -1,7 +1,55 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import '/styles/blocks/icon';
+@import '/styles/blocks/header';
+@import '/styles/blocks/top-bar';
+@import '/styles/blocks/button';
+@import '/styles/blocks/page';
+@import '/styles/blocks/menu';
+@import '/styles/blocks/nav';
+@import '/styles/blocks/more';
+@import '/styles/blocks/about';
+@import '/styles/blocks/tech';
+@import '/styles/blocks/benefits';
+@import '/styles/blocks/contacts';
+@import '/styles/blocks/footer';
+@import '/styles/blocks/accordion';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background: $c-gray;
+  background-color: #05040b;
+  overflow-x: hidden;
+  font-family: Inter, sans-serif;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 34px;
+  }
+
+  @include on-desktop {
+    padding-inline: 110px;
+  }
+
+  @include on-design {
+    padding-inline: 234px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,0 +1,248 @@
+.header {
+  box-sizing: border-box;
+  height: 100%;
+  background-image: linear-gradient(90deg, $header-color, #000);
+
+  &__button {
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    order: -1;
+
+    @include on-tablet {
+      position: static;
+      order: 2;
+      width: 55%;
+      margin-bottom: 60px;
+    }
+
+    @include on-desktop {
+      width: 70%;
+    }
+
+    @include on-design {
+      width: 60%;
+    }
+  }
+
+  &__content {
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+
+    @include on-tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      padding-inline: 30px;
+    }
+
+    @include on-desktop {
+      padding-inline: 110px;
+    }
+
+    @include on-design {
+      padding-inline: 234px;
+    }
+  }
+
+  &__wrapper {
+    @include on-tablet {
+      width: 50%;
+      order: 1;
+    }
+
+    @include on-design {
+      width: 40%;
+    }
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 130%;
+
+    &--bold {
+      color: $white-color;
+    }
+
+    &--thin {
+      color: $blue-color;
+      font-weight: 400;
+    }
+
+    @include on-desktop {
+      font-size: 45px;
+    }
+
+    @include on-design {
+      font-size: 50px;
+      margin-left: 20px;
+    }
+  }
+
+  &__text {
+    color: $text-color;
+    margin-top: 17px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+
+    @include on-desktop {
+      grid-column: 2/6;
+      margin-top: 19px;
+      margin-left: 92px;
+    }
+
+    @include on-design {
+      margin-top: 30px;
+    }
+  }
+
+  &__price {
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: 500;
+    margin-block: 8px 25px;
+    color: $white-color;
+    text-align: center;
+
+    @include on-tablet {
+      margin-block: 10px 33px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      grid-column: 2/4;
+      margin-block: 10px 19px;
+      margin-left: 92px;
+    }
+
+    @include on-design {
+      margin-block: 35px;
+    }
+  }
+
+  &__play {
+    @include on-desktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 66px;
+    margin-bottom: 32px;
+    background-image: url(/images/icons/button-play.svg);
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url(/images/icons/button-selected.svg);
+    }
+
+    @include on-tablet {
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 83px;
+      margin-left: 92px;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 110px;
+      padding-bottom: 84px;
+    }
+
+    @include on-design {
+      padding-inline: 234px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 39px;
+    list-style: none;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+    text-decoration: none;
+
+    &--more {
+      color: $blue-color;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__arrow {
+    font-size: 6px;
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-direction: row;
+    gap: 103px;
+  }
+
+  &__sublink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 1px;
+      background-color: $blue-color;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: $text-color;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

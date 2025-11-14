@@ -1,0 +1,125 @@
+.benefits {
+  background-image: linear-gradient(180deg, $header-color, #000);
+  padding-block: 50px;
+
+  @include on-tablet {
+    padding-block: 70px;
+    background-image: linear-gradient(90deg, $header-color, #000);
+  }
+
+  @include on-desktop {
+    padding-block: 100px;
+  }
+
+  @include on-design {
+    padding-block: 160px;
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    font-weight: 900;
+    font-size: 21px;
+    line-height: 100%;
+    grid-column: 1/-1;
+    margin-bottom: 32px;
+
+    &--white {
+      color: $white-color;
+    }
+
+    &--blue {
+      font-weight: 400;
+      color: $blue-color;
+    }
+
+    @include on-desktop {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 82px;
+    }
+  }
+
+  &__content {
+    display: grid;
+
+    @include page-grid;
+  }
+
+  &__wrapper {
+    margin-bottom: 20px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+
+    &--first {
+      @include on-design {
+        grid-column: 1/5;
+      }
+    }
+
+    &--second {
+      @include on-design {
+        grid-column: 7/11;
+      }
+    }
+
+    &--third {
+      @include on-design {
+        grid-column: 13/-1;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-family: Inter, sans-serif;
+    font-weight: 900;
+    line-height: 100%;
+    font-size: 18px;
+    color: $white-color;
+    margin-bottom: 11px;
+
+    @include on-tablet {
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $menu-text;
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      justify-self: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      min-width: 200px;
+      grid-column: 6/8;
+      margin-top: 90px;
+    }
+
+    @include on-design {
+      display: none;
+    }
+  }
+}

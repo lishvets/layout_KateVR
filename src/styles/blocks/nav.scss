@@ -1,0 +1,43 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    height: 49px;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $menu-hover;
+    }
+
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+
+    @include on-tablet {
+      padding-left: 152px;
+    }
+  }
+
+  &__link {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 130%;
+    color: $white-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &--top-bar {
+      font-size: 16px;
+    }
+  }
+}

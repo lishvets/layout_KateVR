@@ -1,0 +1,229 @@
+.menu {
+  background-color: $menu-bg;
+  overflow-y: auto;
+  box-sizing: border-box;
+  height: 100vh;
+
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-block: 20px 40px;
+    padding-right: 20px;
+
+    @include on-tablet {
+      padding-block: 34px 45px;
+      padding-right: 34px;
+    }
+  }
+}
+
+.submenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background: white;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &-language {
+    position: fixed;
+    inset: 0;
+
+    background-color: $menu-bg;
+    z-index: 1000;
+
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    &__top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 20px 40px;
+
+      @include on-tablet {
+        padding: 34px 34px 45px;
+      }
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__item {
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 130%;
+      color: $white-color;
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+
+      height: 49px;
+      background-color: transparent;
+
+      &:hover {
+        background-color: $menu-hover;
+        color: $blue-color;
+      }
+
+      @include on-tablet {
+        padding-left: 152px;
+      }
+    }
+  }
+
+  &-help {
+    position: fixed;
+    inset: 0;
+
+    background-color: $menu-bg;
+    z-index: 2000;
+
+    display: none;
+    padding-inline: 20px;
+
+    &.active {
+      display: block;
+    }
+
+    @include on-tablet {
+      padding-inline: 34px;
+    }
+
+    &__top {
+      display: flex;
+      justify-content: flex-start;
+      padding-block: 20px 30px;
+
+      @include on-tablet {
+        padding-block: 34px 45px;
+      }
+    }
+
+    &__title {
+      font-family: Inter, sans-serif;
+      font-weight: 900;
+      font-size: 21px;
+      line-height: 130%;
+      text-transform: uppercase;
+
+      &--white {
+        color: $white-color;
+      }
+
+      &--blue {
+        font-weight: 400;
+        color: $blue-color;
+      }
+    }
+
+    &__text {
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $menu-text;
+      margin-block: 30px;
+    }
+
+    &__links {
+      color: $blue-color;
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-decoration: none;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    &__info {
+      color: $menu-text;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      text-decoration: none;
+
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+    }
+  }
+
+  &-faq {
+    position: fixed;
+    inset: 0;
+
+    background-color: $menu-bg;
+    z-index: 1000;
+
+    display: none;
+    padding-inline: 20px;
+    overflow-y: auto;
+
+    &.active {
+      display: block;
+    }
+
+    @include on-tablet {
+      padding-inline: 34px;
+    }
+
+    &__top {
+      display: flex;
+      justify-content: flex-start;
+      padding-block: 20px 30px;
+
+      @include on-tablet {
+        padding-block: 34px 45px;
+      }
+    }
+
+    &__title {
+      font-family: Inter, sans-serif;
+      font-weight: 900;
+      font-size: 21px;
+      line-height: 130%;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+
+      &--white {
+        color: $white-color;
+      }
+
+      &--blue {
+        font-weight: 400;
+        color: $blue-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.button {
+  height: 40px;
+  min-width: 280px;
+  background-color: $blue-color;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 130%;
+  font-weight: 500;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: $white-color;
+    transform: scale(1.05);
+    color: $blue-color;
+  }
+}

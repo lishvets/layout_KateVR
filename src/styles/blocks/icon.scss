@@ -1,0 +1,50 @@
+.icon {
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+
+  @include on-tablet {
+    background-size: 15px 15px;
+  }
+
+  @include on-design {
+    background-size: 23px 23px;
+  }
+
+  &--menu {
+    background-image: url(/images/icons/menu-burger.svg);
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url(/images/icons/icon-close.svg);
+  }
+
+  &--back {
+    background-image: url(/images/icons/arrow-left.svg);
+  }
+
+  &--facebook {
+    background-image: url(/images/socials/icon-facebook.svg);
+  }
+
+  &--twitter {
+    background-image: url(/images/socials/icon-twitter.svg);
+  }
+
+  &--you-tube {
+    background-image: url(/images/socials/icon-youtube.svg);
+  }
+
+  &--reddit {
+    background-image: url(/images/socials/icon-reddit.svg);
+  }
+}
