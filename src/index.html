@@ -170,12 +170,9 @@
         </div>
       </div>
 
+      …
       <div class="header__content">
-        <img
-          class="header__image"
-          src="/images/header--img.png"
-          alt="header--img"
-        />
+        <div class="header__img"></div>
         <div class="header__wrapper">
           <h1 class="header__title">
             <span class="header__title--bold">THE NEW START OF</span>
@@ -911,62 +908,41 @@
                 onsubmit="this.reset(); return false;"
                 class="contacts__form"
               >
-                <label
-                  for="name"
-                  class="contacts__label"
-                >
-                  Name*
-                </label>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   class="contacts__field"
+                  placeholder="Name*"
                   required
                   autocomplete="name"
                 />
-                <label
-                  for="email"
-                  class="contacts__label"
-                >
-                  Email*
-                </label>
 
                 <input
                   type="email"
                   name="email"
                   id="email"
                   class="contacts__field"
+                  placeholder="Email*"
                   required
                   autocomplete="name"
                 />
-
-                <label
-                  for="phone"
-                  class="contacts__label"
-                >
-                  Phone*
-                </label>
 
                 <input
                   type="tel"
                   name="phone"
                   id="phone"
                   class="contacts__field"
+                  placeholder="Phone*"
                   required
-                  autocomplete="name"
+                  autocomplete="tel"
                 />
 
-                <label
-                  for="message"
-                  class="contacts__label"
-                >
-                  Message
-                </label>
                 <textarea
                   name="message"
                   id="message"
                   class="contacts__field contacts__field--message"
+                  placeholder="Message"
                 ></textarea>
 
                 <button

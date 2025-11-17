@@ -9,41 +9,13 @@
     }
   }
 
-  &__image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 24px;
-    order: -1;
-
-    @include on-tablet {
-      position: static;
-      order: 2;
-      width: 55%;
-      margin-bottom: 60px;
-    }
-
-    @include on-desktop {
-      width: 70%;
-    }
-
-    @include on-design {
-      width: 60%;
-    }
-  }
-
   &__content {
+    display: grid;
     padding-inline: 20px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    position: relative;
+
+    @include page-grid;
 
     @include on-tablet {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left;
       padding-inline: 30px;
     }
 
@@ -56,19 +28,50 @@
     }
   }
 
-  &__wrapper {
+  &__img {
+    grid-column: 1/-1;
+    background-image: url(/images/header-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 172px;
+
     @include on-tablet {
-      width: 50%;
-      order: 1;
+      background-image: url(/images/header-tablet.png);
+      grid-column: 3/-1;
+      grid-row: 2;
+      height: 348px;
+    }
+
+    @include on-desktop {
+      background-image: url(/images/header-big.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      grid-column: 6/-1;
     }
 
     @include on-design {
-      width: 40%;
+      background-image: url(/images/header-design.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      grid-column: 5/-1;
+      height: 100%;
+    }
+  }
+
+  &__wrapper {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
     }
   }
 
   &__title {
-    font-family: Inter, sans-serif;
     font-weight: 900;
     font-size: 26px;
     line-height: 130%;
@@ -83,7 +86,7 @@
     }
 
     @include on-desktop {
-      font-size: 45px;
+      font-size: 46px;
     }
 
     @include on-design {
@@ -95,15 +98,13 @@
   &__text {
     color: $text-color;
     margin-top: 17px;
-    font-family: Inter, sans-serif;
     font-size: 16px;
     line-height: 150%;
     font-weight: 500;
 
     @include on-desktop {
-      grid-column: 2/6;
       margin-top: 19px;
-      margin-left: 92px;
+      margin-inline: 92px;
     }
 
     @include on-design {
@@ -112,7 +113,6 @@
   }
 
   &__price {
-    font-family: Inter, sans-serif;
     font-size: 18px;
     line-height: 100%;
     font-weight: 500;
@@ -126,7 +126,6 @@
     }
 
     @include on-desktop {
-      grid-column: 2/4;
       margin-block: 10px 19px;
       margin-left: 92px;
     }
@@ -160,6 +159,10 @@
     @include on-desktop {
       margin-bottom: 83px;
       margin-left: 92px;
+    }
+
+    @include on-design {
+      margin-bottom: 221px;
     }
   }
 

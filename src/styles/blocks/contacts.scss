@@ -24,7 +24,6 @@
   &__text {
     &--blue {
       margin-bottom: 11px;
-      font-family: Inter, sans-serif;
       font-weight: 400;
       font-size: 14px;
       line-height: 100%;
@@ -45,7 +44,6 @@
 
       @include on-tablet {
         display: block;
-        font-family: Inter, sans-serif;
         line-height: 150%;
         color: $menu-text;
         font-weight: 400;
@@ -60,7 +58,6 @@
     }
 
     &--mobile {
-      font-family: Inter, sans-serif;
       font-size: 12px;
       line-height: 150%;
       font-weight: 400;
@@ -73,7 +70,6 @@
   }
 
   &__title {
-    font-family: Inter, sans-serif;
     font-size: 21px;
     line-height: 100%;
 
@@ -111,10 +107,13 @@
   &__info {
     text-decoration: none;
     color: $menu-text;
-    font-family: Inter, sans-serif;
     font-size: 16px;
     line-height: 100%;
     font-weight: 400;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__form {
@@ -128,14 +127,6 @@
     }
   }
 
-  &__label {
-    font-family: Inter, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: $menu-text;
-  }
-
   &__field {
     background-color: $bg-color;
     resize: none;
@@ -143,7 +134,7 @@
     border: none;
     font-size: 14px;
     font-weight: 400;
-    line-height: 19px;
+    line-height: 40px;
     border-bottom: 1px solid $line-color;
     color: $white-color;
     margin-bottom: 24px;
@@ -171,7 +162,6 @@
     display: block;
     max-width: 280px;
     background-color: $blue-color;
-    font-family: Inter, sans-serif;
     font-size: 14px;
     line-height: 130%;
     font-weight: 500;
@@ -218,7 +208,7 @@
       display: flex;
       position: absolute;
       bottom: 0;
-      right: 0; // відступ від форми (підіграти під макет)
+      right: 0;
     }
   }
 }

@@ -32,7 +32,6 @@
       min-width: 200px;
       height: 40px;
       background-color: $blue-color;
-      font-family: Inter, sans-serif;
       font-size: 14px;
       line-height: 130%;
       font-weight: 500;
@@ -80,12 +79,15 @@
   }
 
   &__link {
-    font-family: Inter, sans-serif;
     font-weight: 500;
     font-size: 21px;
     line-height: 130%;
     color: $white-color;
     text-decoration: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__logo {
