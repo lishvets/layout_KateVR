@@ -1,4 +1,5 @@
 .page {
+  background-color: #05040b;
   scroll-behavior: smooth;
   overflow-x: hidden;
 
@@ -8,11 +9,14 @@
     left: 0;
     right: 0;
     opacity: 0;
-
-    transition: all 0.3s;
-    transform: translateX(-100%);
-    pointer-events: none;
     z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: all 0.3s;
 
     &:target {
       opacity: 1;
