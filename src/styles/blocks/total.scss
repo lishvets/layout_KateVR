@@ -1,0 +1,163 @@
+.total {
+  margin-block: 30px;
+  padding-inline: 14px 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 16px;
+  line-height: 130%;
+  font-weight: 400;
+
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    grid-column: 1/4;
+    margin-block: 0 48px;
+    padding-inline: 0;
+  }
+
+  @include on-desktop {
+    grid-column: 1/4;
+  }
+
+  &--pay {
+    margin-block: 47px 53px;
+
+    @include on-tablet {
+      grid-column: 2/5;
+    }
+
+    @include on-desktop {
+      grid-column: 1/4;
+    }
+  }
+
+  &__quantity {
+    color: $text-color;
+  }
+
+  &__quantity-form {
+    min-width: 90px;
+    height: 41px;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include on-tablet {
+      height: 47px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::after {
+      content: '';
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 6px solid $blue-color;
+      pointer-events: none;
+      position: absolute;
+    }
+  }
+
+  &__select {
+    background-color: transparent;
+    border: none;
+    color: $white-color;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 37px;
+    padding-left: 39px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__option {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  &__price {
+    color: $text-color;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__amount {
+    color: $blue-color;
+    font-size: 26px;
+    line-height: 100%;
+    font-weight: 500;
+
+    @include on-tablet {
+      font-size: 36px;
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 40px;
+    width: 100%;
+    background: $blue-color;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    padding-block: 10px;
+    margin-block: 10px 40px;
+    border-radius: 4px;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
+    grid-column: 1/-1;
+
+    &:hover {
+      background-color: $white-color;
+      transform: scale(1.05);
+      color: $blue-color;
+    }
+
+    @include on-tablet {
+      margin-block: 58px 43px;
+      max-width: 458px;
+      grid-column: 2/6;
+    }
+
+    @include on-desktop {
+      max-width: 200px;
+      grid-column: 7/9;
+    }
+
+    @include on-design {
+      grid-column: 9/-1;
+    }
+  }
+}

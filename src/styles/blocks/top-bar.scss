@@ -15,6 +15,10 @@
   @include on-tablet {
     padding-block: 30px 55px;
     padding-inline: 30px;
+
+    &--order {
+      padding-block: 30px;
+    }
   }
 
   @include on-desktop {
@@ -27,8 +31,16 @@
       gap: 36px;
     }
 
+    &--order {
+      gap: 191px;
+      align-items: center;
+    }
+
     &__button {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       min-width: 200px;
       height: 40px;
       background-color: $blue-color;
@@ -38,6 +50,12 @@
       color: $white-color;
       border: none;
       margin-left: 37px;
+      border-radius: 4px;
+      text-decoration: none;
+
+      transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
 
       &:hover {
         background-color: $white-color;
@@ -50,6 +68,11 @@
   @include on-design {
     padding-inline: 234px;
     padding-block: 60px 232px;
+
+    &--order {
+      gap: 288px;
+      padding-block: 64px 219px;
+    }
   }
 
   &__left {
@@ -106,80 +129,6 @@
     @include on-desktop {
       width: 77px;
       height: 16px;
-    }
-  }
-}
-
-.dropdown {
-  position: relative;
-  display: none;
-  color: #00e1ff;
-  font-size: 16px;
-
-  @include on-desktop {
-    display: block;
-  }
-
-  &__button {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 4px;
-  }
-
-  &__en {
-    font-family: Inter, sans-serif;
-    font-weight: 500;
-    line-height: 130%;
-    font-size: 16px;
-    color: $blue-color;
-  }
-
-  &__arrow {
-    font-size: small;
-    color: $blue-color;
-  }
-
-  &__menu {
-    align-items: flex-start;
-    flex-direction: column;
-    position: absolute;
-    display: none;
-
-    width: 45px;
-    padding-top: 10px;
-    border-radius: 4px;
-
-    z-index: 1000;
-
-    opacity: 0;
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-    pointer-events: none;
-    transform: translateY(-10px);
-  }
-
-  .dropdown__menu.active {
-    display: flex;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  &__link {
-    margin-bottom: 10px;
-    font-family: Inter, sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 130%;
-    color: $blue-color;
-    text-align: center;
-    text-decoration: none;
-
-    &:hover {
-      border-right: 1px solid $blue-color;
-      color: $white-color;
     }
   }
 }

@@ -26,6 +26,11 @@
 
   &--close {
     background-image: url(/images/icons/icon-close.svg);
+    &-desktop {
+      @include on-desktop {
+        display: none;
+      }
+    }
   }
 
   &--back {

@@ -1,0 +1,206 @@
+.form {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(90deg, $header-color, #000);
+
+  @include on-tablet {
+    background: transparent;
+  }
+
+  @include on-desktop {
+    grid-column: 7/-1;
+    grid-row: 1;
+  }
+
+  @include on-design {
+    grid-column: 9/-1;
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    &--expiry {
+      max-width: 160px;
+      background-color: transparent;
+
+      @include on-tablet {
+        row-gap: 17px;
+      }
+    }
+
+    &--cvv {
+      max-width: 70px;
+
+      @include on-tablet {
+        row-gap: 12px;
+      }
+    }
+
+    &--select {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-bottom: 30px;
+      position: relative;
+
+      &::after {
+        content: '';
+        top: 70%;
+        transform: translateY(-50%);
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 6px solid $blue-color;
+        pointer-events: none;
+        position: absolute;
+        right: 20px;
+      }
+
+      @include on-tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &:has(input:focus) label,
+    &:has(input:hover) label,
+    &:has(input:active) label {
+      color: $blue-color;
+    }
+
+    &--holder {
+      @include on-tablet {
+        margin-block: 38px 40px;
+      }
+    }
+  }
+
+  &__label {
+    color: $text-color;
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  &__field {
+    background-color: transparent;
+    resize: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    border-bottom: 1px solid $line-color;
+    color: $white-color;
+    margin-bottom: 30px;
+    outline: none;
+    caret-color: $blue-color;
+    transition: border-color 0.3s;
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid $blue-color;
+    }
+
+    &--input {
+      width: 54px;
+      resize: none;
+      background: none;
+      border: none;
+
+      font-family: Inter, sans-serif;
+      font-size: 18px;
+      margin-bottom: 30px;
+
+      border-bottom: 1px solid $line-color;
+      color: $white-color;
+
+      @include on-tablet {
+        width: 70px;
+        font-size: 20px;
+      }
+    }
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__select {
+    appearance: none;
+    background-color: #191536;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $line-color;
+    color: $white-color;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 130%;
+    padding: 13px 0 13px 24px;
+    display: block;
+  }
+
+  &__number {
+    display: flex;
+    gap: 20px;
+    background: transparent;
+    margin-top: 17px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 20px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 54px;
+      height: 34px;
+
+      background-image: url(/images/visa.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+
+    @include on-tablet {
+      margin-bottom: 46px;
+      gap: 80px;
+    }
+  }
+
+  &__order {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 19px;
+    }
+  }
+
+  &__pay {
+    @include on-tablet {
+      grid-column: 2/6;
+    }
+
+    @include on-desktop {
+      grid-column: 7/-1;
+    }
+
+    @include on-design {
+      grid-column: 9/-1;
+    }
+  }
+}

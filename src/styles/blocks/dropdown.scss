@@ -1,0 +1,71 @@
+.dropdown {
+  position: relative;
+  display: none;
+  color: #00e1ff;
+  font-size: 16px;
+
+  @include on-desktop {
+    display: block;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+  }
+
+  &__en {
+    font-weight: 500;
+    line-height: 130%;
+    font-size: 16px;
+    color: $blue-color;
+  }
+
+  &__arrow {
+    font-size: small;
+    color: $blue-color;
+  }
+
+  &__menu {
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    display: none;
+
+    width: 45px;
+    padding-top: 10px;
+    border-radius: 4px;
+
+    z-index: 1000;
+
+    opacity: 0;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    pointer-events: none;
+    transform: translateY(-10px);
+
+    &.active {
+      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+
+  &__link {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 130%;
+    color: $blue-color;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      border-right: 1px solid $blue-color;
+      color: $white-color;
+    }
+  }
+}

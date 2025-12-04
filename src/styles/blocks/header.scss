@@ -34,6 +34,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 172px;
+    pointer-events: none;
 
     @include on-tablet {
       background-image: url(/images/header-tablet.png);
@@ -47,6 +48,10 @@
       background-repeat: no-repeat;
       background-position: center;
       grid-column: 6/-1;
+
+      pointer-events: none;
+      z-index: 1;
+      position: relative;
     }
 
     @include on-design {
@@ -168,6 +173,8 @@
       justify-content: space-between;
       padding-inline: 110px;
       padding-bottom: 84px;
+      z-index: 20;
+      position: relative;
     }
 
     @include on-design {
@@ -175,26 +182,37 @@
     }
   }
 
-  &__list {
+  &__left {
     display: flex;
     flex-direction: row;
     gap: 39px;
-    list-style: none;
+  }
+
+  &__faq-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+    text-decoration: none;
+  }
+
+  &__help-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+    text-decoration: none;
   }
 
   &__link {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
-    color: $white-color;
     text-decoration: none;
-
-    &--more {
-      color: $blue-color;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+    color: $blue-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   &__center {

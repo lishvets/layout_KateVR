@@ -15,11 +15,22 @@
 @import '/styles/blocks/contacts';
 @import '/styles/blocks/footer';
 @import '/styles/blocks/accordion';
+@import '/styles/blocks/order';
+@import '/styles/blocks/total';
+@import '/styles/blocks/form';
+@import '/styles/blocks/complete';
+@import '/styles/blocks/faq';
+@import '/styles/blocks/help';
+@import '/styles/blocks/dropdown';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

@@ -14,7 +14,6 @@
   }
 
   &__title {
-    font-family: Inter, sans-serif;
     font-weight: 900;
     font-size: 21px;
     line-height: 100%;
@@ -42,7 +41,6 @@
   }
 
   &__paragraph {
-    font-family: Inter, sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 100%;
@@ -68,7 +66,6 @@
   }
 
   &__subtitle {
-    font-family: Inter, sans-serif;
     font-size: 16px;
     line-height: 100%;
     font-weight: 900;
@@ -87,7 +84,6 @@
 
   &__text {
     font-weight: 400;
-    font-family: Inter, sans-serif;
     line-height: 150%;
     font-size: 16px;
     color: $menu-text;
